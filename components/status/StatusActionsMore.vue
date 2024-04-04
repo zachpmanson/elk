@@ -234,6 +234,22 @@ function showFavoritedAndBoostedBy() {
           />
         </NuxtLink>
 
+        <NuxtLink v-if="status.url" :to="`https://unroller.zachmanson.com/tree/${status.url}`" external target="_blank">
+          <CommonDropdownItem
+            text="Open as tree"
+            icon="i-ri:arrow-right-up-line"
+            :command="command"
+          />
+        </NuxtLink>
+
+        <NuxtLink v-if="status.url" :to="`https://unroller.zachmanson.com/thread/${status.url}`" external target="_blank">
+          <CommonDropdownItem
+            text="Open as thread"
+            icon="i-ri:arrow-right-up-line"
+            :command="command"
+          />
+        </NuxtLink>
+
         <template v-if="isHydrated && currentUser">
           <template v-if="isAuthor">
             <CommonDropdownItem
